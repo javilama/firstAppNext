@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, FC } from 'react'
 
 const style:CSSProperties ={
     color:'#2196f3',
@@ -8,7 +8,13 @@ const style:CSSProperties ={
     fontWeight:'bold'
 }
 
-const ActiveLink = ({href,text}) => {
+interface Props{
+  text:string;
+  href:string;
+}
+
+
+const ActiveLink:FC<Props> = ({href,text}) => {
 
     const {asPath} = useRouter()
     
